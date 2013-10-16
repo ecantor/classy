@@ -14,6 +14,7 @@ class Notice < ActiveRecord::Base
         :body => message
     )
     puts "Sent message as requested"
+    return
   end
 
   def send_sms(message)

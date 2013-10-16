@@ -42,16 +42,10 @@ class NoticesController < ApplicationController
   def create
     @notice = Notice.new(params[:notice])
     puts @notice
-    respond_to do |format|
-      if @notice.save
-        Notice.send_notice(@notice.destination, @notice.message)
-        format.html { redirect_to @notice, notice: 'Notice was successfully sent.' }
-        format.json { render json: @notice, status: :created, location: @notice }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @notice.errors, status: :unprocessable_entity }
-      end
-    end
+    @notice.save
+        # logger.debug "XOXOXOXOXOXOXOXOXO destination is " + @notice.destination + "and message is " + @notice.message
+    Notice.last.send_notice(@notice.destination, @notice.message)
+    format.html { redirect_to @notice, notice: 'Notice was successfully sent.' }
   end
 
   # PUT /notices/1

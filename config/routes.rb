@@ -1,4 +1,7 @@
 Classy::Application.routes.draw do
+  resources :notices
+
+
   resources :feedbacks
   post 'feedbacks/submit' => 'feedbacks#submit'
 

@@ -60,7 +60,7 @@ class FeedbacksController < ApplicationController
       end
 
       @feedback = Feedback.new({:source => params[:From], :message => params[:Body], :msid => params[:MessageSid], :zip => params[:FromZip]})
-      puts @feedback + "is the last feedback"
+      puts @feedback
       @feedback.save
       render :text => twiml.text
 

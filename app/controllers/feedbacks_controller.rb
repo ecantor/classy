@@ -59,12 +59,11 @@ class FeedbacksController < ApplicationController
         r.Message "Hey Class. Thx 4 feedback! Your no #{params[:From]} is now in the system! And #{params[:Body]} is helpful input."
       end
 
-      twiml.text
-
       @feedback = Feedback.new({:source => params[:From], :message => params[:Body], :msid => params[:MessageSid], :zip => params[:FromZip]})
       @feedback.save
 
-      render :nothing => true
+      render :text =>  twiml.text
+
   end
   # PUT /feedbacks/1
   # PUT /feedbacks/1.json

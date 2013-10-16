@@ -15,27 +15,4 @@
 <%= link_to 'Back', feedbacks_path %>
 
 
-require 'rubygems'
-require 'twilio-ruby'
-require "bundler/setup"
-require 'sinatra'
 
-get '/sms-quickstart' do
-twiml = Twilio::TwiML::Response.new do |r|
-r.Message "Hey Class. Thx 4 feedback! Your no #{params[:From]} is now in the system! And #{params[:Body]} is helpful input."
-end
-twiml.text
-
-#  @string = "#{params[:From]}: #{params[:Body]}"
-#  File.open('/tmp/bodies', 'w+') do |f|
-#    f.puts @string
-#  end
-end
-
-get '/responses' do
-"List of Responses\n"
-#  File.read('/tmp/bodies') do |t|
-#       t.puts
-#       "\n"
-#  end
-end

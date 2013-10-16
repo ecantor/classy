@@ -53,6 +53,26 @@ class FeedbacksController < ApplicationController
     end
   end
 
+  # POST submit.html.erb
+  def submit
+      twiml = Twilio::TwiML::Response.new do |r|
+        r.Message "Hey Class. Thx 4 feedback! Your no #{params[:From]} is now in the system! And #{params[:Body]} is helpful input."
+      end
+
+      twiml.text
+
+      @feedback = Feedback.new({:source => params[:From], :message => params[:Body]})
+
+      respond_to do |format|
+        if @feedback.save
+          format.html { redirect_to @feedback, notice: 'Feedback was successfully created.' }
+          format.json { render json: @feedback, status: :created, location: @feedback }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @feedback.errors, status: :unprocessable_entity }
+        end
+      end
+  end
   # PUT /feedbacks/1
   # PUT /feedbacks/1.json
   def update

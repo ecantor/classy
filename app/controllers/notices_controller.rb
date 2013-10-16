@@ -41,10 +41,11 @@ class NoticesController < ApplicationController
   # POST /notices.json
   def create
     @notice = Notice.new(params[:notice])
-
+    puts @notice
     respond_to do |format|
       if @notice.save
-        format.html { redirect_to @notice, notice: 'Notice was successfully created.' }
+        Notice.send_notice(@notice.destination, @notice.message)
+        format.html { redirect_to @notice, notice: 'Notice was successfully sent.' }
         format.json { render json: @notice, status: :created, location: @notice }
       else
         format.html { render action: "new" }

@@ -60,7 +60,7 @@ class FeedbacksController < ApplicationController
       end
 
       @feedback = Feedback.new({:source => params[:From], :message => params[:Body], :msid => params[:MessageSid], :zip => params[:FromZip]})
-      puts @feedback
+      logger.debug @feedback.to_s
       @feedback.save
       render :text => twiml.text
 

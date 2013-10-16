@@ -63,6 +63,8 @@ class FeedbacksController < ApplicationController
 
       @feedback = Feedback.new({:source => params[:From], :message => params[:Body], :msid => params[:MessageSid], :zip => params[:FromZip]})
       @feedback.save
+
+      render :nothing => true
   end
   # PUT /feedbacks/1
   # PUT /feedbacks/1.json

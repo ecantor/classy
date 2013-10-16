@@ -52,10 +52,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="feedbacks_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="feedbacks_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/feedbacks_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="38" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.0">
+            <state line="61" column="87" selection-start="1650" selection-end="1650" vertical-scroll-proportion="0.6894737">
               <folding />
             </state>
           </provider>
@@ -97,10 +97,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="feedback.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="feedback.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/feedback.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="36" selection-start="667" selection-end="667" vertical-scroll-proportion="0.38931298">
+            <state line="25" column="36" selection-start="667" selection-end="667" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -750,6 +750,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/feedback.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="36" selection-start="667" selection-end="667" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/feedbacks/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="13" selection-start="125" selection-end="125" vertical-scroll-proportion="-5.0">
@@ -759,14 +766,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/feedbacks_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="38" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/feedback.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="36" selection-start="667" selection-end="667" vertical-scroll-proportion="0.38931298">
+        <state line="61" column="87" selection-start="1650" selection-end="1650" vertical-scroll-proportion="0.6894737">
           <folding />
         </state>
       </provider>

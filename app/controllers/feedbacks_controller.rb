@@ -56,13 +56,13 @@ class FeedbacksController < ApplicationController
   # POST submit.html.erb
   def submit
       twiml = Twilio::TwiML::Response.new do |r|
-        r.Message "Hey Class. Thx 4 feedback! Your no #{params[:From]} is now in the system! And #{params[:Body]} is helpful input."
+        r.Message "Hey there, Thx 4 feedback! Your no #{params[:From]} is now in the system! And #{params[:Body]} is really helpful input.  We hope it's nice in #{params[:FromCity]}"
       end
 
       @feedback = Feedback.new({:source => params[:From], :message => params[:Body], :msid => params[:MessageSid], :zip => params[:FromZip]})
+      puts @feedback + "is the last feedback"
       @feedback.save
-
-      render :text =>  twiml.text
+      render :text => twiml.text
 
   end
   # PUT /feedbacks/1

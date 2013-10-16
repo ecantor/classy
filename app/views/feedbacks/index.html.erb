@@ -7,12 +7,17 @@
     <th></th>
     <th></th>
     <th></th>
+    <th>ID</th>
+    <th>Zip Code</th>
+    <th></th>
   </tr>
 
 <% @feedbacks.each do |feedback| %>
   <tr>
     <td><%= feedback.source %></td>
     <td><%= feedback.message %></td>
+    <td><%= feedback.msid %></td>
+    <td><%= feedback.zip %></td>
     <td><%= link_to 'Show', feedback %></td>
     <td><%= link_to 'Edit', edit_feedback_path(feedback) %></td>
     <td><%= link_to 'Destroy', feedback, method: :delete, data: { confirm: 'Are you sure?' } %></td>

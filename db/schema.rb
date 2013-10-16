@@ -11,13 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131015163740) do
+ActiveRecord::Schema.define(:version => 20131016014505) do
 
   create_table "feedbacks", :force => true do |t|
     t.string   "source"
     t.string   "message"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "msid"
+    t.string   "zip"
   end
 
 end

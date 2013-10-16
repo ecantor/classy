@@ -61,17 +61,8 @@ class FeedbacksController < ApplicationController
 
       twiml.text
 
-      @feedback = Feedback.new({:source => params[:From], :message => params[:Body]})
-
-      respond_to do |format|
-        if @feedback.save
-          format.html { redirect_to @feedback, notice: 'Feedback was successfully created.' }
-          format.json { render json: @feedback, status: :created, location: @feedback }
-        else
-          format.html { render action: "new" }
-          format.json { render json: @feedback.errors, status: :unprocessable_entity }
-        end
-      end
+      @feedback = Feedback.new({:source => params[:From], :message => params[:Body], :msid => params[:MessageSid], :zip => params[:FromZip]})
+      @feedback.save
   end
   # PUT /feedbacks/1
   # PUT /feedbacks/1.json
